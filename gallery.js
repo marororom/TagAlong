@@ -60,9 +60,9 @@ interact('.dropzone').dropzone({
             dropzoneElement = event.target;
 
         // feedback the possibility of a drop
+        removeTagDropClasses(draggableElement);
         dropzoneElement.classList.add('drop-target');
         draggableElement.classList.add('can-drop');
-        removeTagDropClasses(draggableElement);
         draggableElement.textContent = 'Dragged in';
     },
     ondragleave: function (event) {
@@ -71,7 +71,6 @@ interact('.dropzone').dropzone({
         // remove the drop feedback style
         dropzoneElement.classList.remove('drop-target');
         draggableElement.classList.remove('can-drop');
-        removeTagDropClasses(draggableElement);
 
         draggableElement.textContent = 'Dragged out';
     },
