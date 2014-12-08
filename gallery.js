@@ -63,7 +63,7 @@ interact('.dropzone').dropzone({
         removeTagDropClasses(draggableElement);
         dropzoneElement.classList.add('drop-target');
         draggableElement.classList.add('can-drop');
-        draggableElement.textContent = 'Dragged in';
+        //draggableElement.textContent = 'Dragged in';
     },
     ondragleave: function (event) {
         var draggableElement = event.relatedTarget,
@@ -72,13 +72,13 @@ interact('.dropzone').dropzone({
         dropzoneElement.classList.remove('drop-target');
         draggableElement.classList.remove('can-drop');
 
-        draggableElement.textContent = 'Dragged out';
+        //draggableElement.textContent = 'Dragged out';
     },
     ondrop: function (event) {
         var draggableElement = event.relatedTarget,
             dropzoneElement = event.target;
 
-        draggableElement.textContent = 'Dropped';
+        //draggableElement.textContent = 'Dropped';
 
         var numberOfTags = jQuery(event.target).find(".drag-drop").length;
         if(numberOfTags ===0){
