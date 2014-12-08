@@ -28,21 +28,39 @@
 }
 
 .drop-target {
-    background-color: #29e;
+    /*background-color: #29e;*/
+}
+
+.apple {
+    background: url('GameParts/TAG_Apple.png')
+}
+
+.bird {
+    background: url('GameParts/TAG_Bird.png')
+}
+
+.car {
+    background: url('GameParts/TAG_Car.png')
+}
+
+.cat {
+    background: url('GameParts/TAG_Cat.png')
+}
+
+.person {
+    background: url('GameParts/TAG_Person.png')
+}
+
+.sun {
+    background: url('GameParts/TAG_Sun.png')
 }
 
 .drag-drop {
-    background-color: #99e;
-    border: solid 2px white;
-    background-color: #99e;
-    border: solid 2px white;
-
-    min-width: 40px;
-
+    background-repeat: no-repeat;
+    background-size: 80px Auto;
+    min-width: 70px;
     display: inline-block;
-    padding: 2em 0.5em;
-
-
+    padding: 27px 13px;
     /*-webkit-transform: translate(0px, 0px);
     transform: translate(0px, 0px);*/
 
