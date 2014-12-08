@@ -51,12 +51,26 @@
 
 .drag-drop.can-drop { background-color: #4e4; }
 
-.ladida-drop {
+.tag-drop-one {
     position: absolute;
     left: 15px;
     top: 15px;
 }
-
+.tag-drop-two {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+.tag-drop-three {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+}
+.tag-drop-four {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
 body {
     margin: 0;
     padding: 0;

@@ -33,11 +33,11 @@ interact('.draggable')
     // enable inertial throwing
     .inertia(true)
     // keep the element within the area of it's parent
-    .restrict({
+    /*.restrict({
         drag: "parent",
         endOnly: true,
         elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
-    });
+    })*/;
 
 // allow more than one interaction at a time
 interact.maxInteractions(Infinity);
@@ -62,23 +62,43 @@ interact('.dropzone').dropzone({
         // feedback the possibility of a drop
         dropzoneElement.classList.add('drop-target');
         draggableElement.classList.add('can-drop');
+        removeTagClasses(draggableElement);
         draggableElement.textContent = 'Dragged in';
     },
     ondragleave: function (event) {
+        var draggableElement = event.relatedTarget,
+            dropzoneElement = event.target;
         // remove the drop feedback style
-        event.target.classList.remove('drop-target');
-        event.relatedTarget.classList.remove('can-drop');
-        event.relatedTarget.textContent = 'Dragged out';
+        dropzoneElement.classList.remove('drop-target');
+        draggableElement.classList.remove('can-drop');
+        removeTagClasses(draggableElement);
+
+        draggableElement.textContent = 'Dragged out';
     },
     ondrop: function (event) {
-        event.relatedTarget.textContent = 'Dropped';
+        var draggableElement = event.relatedTarget,
+            dropzoneElement = event.target;
 
-        jQuery(event.target).append(jQuery(event.relatedTarget));
-        jQuery(event.relatedTarget).removeAttr('style');
-        jQuery(event.relatedTarget).removeAttr('data-x');
-        jQuery(event.relatedTarget).removeAttr('data-y');
-        event.relatedTarget.classList.add('ladida-drop');
-        //jQuery(event).append(event.relatedTarget);
+        draggableElement.textContent = 'Dropped';
+
+        var numberOfTags = jQuery(event.target).find(".drag-drop").length;
+        if(numberOfTags ===0){
+            appendTag(dropzoneElement, draggableElement);
+            removePositionOfTag(draggableElement);
+            draggableElement.classList.add('tag-drop-one');
+        }else if(numberOfTags === 1){
+            appendTag(dropzoneElement, draggableElement);
+            removePositionOfTag(draggableElement);
+            draggableElement.classList.add('tag-drop-two');
+        }else if(numberOfTags ===2){
+            appendTag(dropzoneElement, draggableElement);
+            removePositionOfTag(draggableElement);
+            draggableElement.classList.add('tag-drop-three');
+        }else{
+            appendTag(dropzoneElement, draggableElement);
+            removePositionOfTag(draggableElement);
+            draggableElement.classList.add('tag-drop-four');
+        }
     },
     ondropdeactivate: function (event) {
         // remove active dropzone feedback
@@ -86,3 +106,19 @@ interact('.dropzone').dropzone({
         event.target.classList.remove('drop-target');
     }
 });
+
+var appendTag = function(dropzone, tag){
+    jQuery(dropzone).append(jQuery(tag));
+};
+
+var removePositionOfTag = function(tag){
+    jQuery(tag).removeAttr('style');
+    jQuery(tag).removeAttr('data-x');
+    jQuery(tag).removeAttr('data-y');
+};
+var removeTagClasses = function(tag){
+    tag.classList.remove('tag-drop-one');
+    tag.classList.remove('tag-drop-two');
+    tag.classList.remove('tag-drop-three');
+    tag.classList.remove('tag-drop-four');
+};
