@@ -72,6 +72,13 @@ interact('.dropzone').dropzone({
     },
     ondrop: function (event) {
         event.relatedTarget.textContent = 'Dropped';
+
+        jQuery(event.target).append(jQuery(event.relatedTarget));
+        jQuery(event.relatedTarget).removeAttr('style');
+        jQuery(event.relatedTarget).removeAttr('data-x');
+        jQuery(event.relatedTarget).removeAttr('data-y');
+        event.relatedTarget.classList.add('ladida-drop');
+        //jQuery(event).append(event.relatedTarget);
     },
     ondropdeactivate: function (event) {
         // remove active dropzone feedback
