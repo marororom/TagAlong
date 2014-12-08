@@ -144,3 +144,58 @@ body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleB
         padding-bottom: 23%;
     }
 }
+
+body {
+    position:absolute;
+    background:#FFFFFF;
+}
+
+html, body {
+    top:0; left:0; right:0;
+    min-height:100%;
+    margin:0;
+    padding:0;
+    width:100%;
+}
+
+#header_container {
+    position:fixed;
+    top:0; left:0; right:0;
+    text-align:center;
+    margin:0;
+    height:3em;
+    z-index:3;
+}
+
+#header {
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;
+    height:100%;
+    background:#efefef;
+    z-index:3;
+    margin:0;
+    padding:0.2em;
+}
+
+#content {
+    margin:0;
+    padding-top:4em;
+    padding-bottom:3em;
+    z-index:2;
+}
+
+#footer_container {
+    position:fixed;
+    bottom:0; left:0; right:0;
+    text-align:center;
+    margin:0;
+    height:12em;
+    z-index:3;
+}
+
+#footer {
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;
+    background:#efefef;
+    z-index:3;
+}
