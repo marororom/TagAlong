@@ -188,7 +188,7 @@ html, body {
     position:absolute;
     top:0; left:0; right:0; bottom:0;
     height:44px;
-    background: url('GameParts/Menu.png') no-repeat;
+    background: url('GameParts/MENU.png') no-repeat;
     z-index:3;
     margin:0;
     padding:0.2em;
@@ -216,7 +216,7 @@ html, body {
 
 #footer {
     position:absolute;
-    background: url('GameParts/Menu.png') no-repeat;
+    background: url('GameParts/MENU.png') no-repeat;
     top:0; left:0; right:0; bottom:0;
     z-index:3;
 }
