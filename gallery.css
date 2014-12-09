@@ -7,13 +7,6 @@
 }
 
 .dropzone {
-    /*background-color: #ccc;
-    border: dashed 4px transparent;
-    border-radius: 4px;
-    margin: 10px auto 30px;
-    padding: 10px;
-    width: 80%;
-    transition: background-color 0.3s, border-color 0.3s;*/
 }
 
 .pattern {
@@ -109,7 +102,7 @@ body {
     left: 1px;
     right: 1px;
     top: 1px;
-    bottom: 1px !important;
+    bottom: 1px;
     overflow: hidden;
 }
 .boxInner img {
@@ -215,7 +208,6 @@ h1 {
     margin:0;
     height:12em;
     z-index:3;
-
 }
 
 #footer {
