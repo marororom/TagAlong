@@ -1,3 +1,66 @@
+var addHighlightToTag = function(tag){
+
+    if(tag.classList.contains('apple-tag')){
+        tag.classList.remove(('apple-tag'));
+        tag.classList.add('apple-tag-highlight');
+    }else if(tag.classList.contains('bird-tag')){
+        tag.classList.remove(('bird-tag'));
+        tag.classList.add('bird-tag-highlight');
+    }else if(tag.classList.contains('car-tag')){
+        tag.classList.remove(('car-tag'));
+        tag.classList.add('car-tag-highlight');
+    }else if(tag.classList.contains('cat-tag')){
+        tag.classList.remove(('cat-tag'));
+        tag.classList.add('cat-tag-highlight');
+    }else if(tag.classList.contains('person-tag')){
+        tag.classList.remove(('person-tag'));
+        tag.classList.add('person-tag-highlight');
+    }else if(tag.classList.contains('sun-tag')){
+        tag.classList.remove(('sun-tag'));
+        tag.classList.add('sun-tag-highlight');
+    }
+};
+
+var removeHighlightFromTag = function(tag){
+
+
+    if(tag.classList.contains('apple-tag-highlight')){
+        tag.classList.remove(('apple-tag-highlight'));
+        tag.classList.add('apple-tag');
+    }else if(tag.classList.contains('bird-tag-highlight')){
+        tag.classList.remove(('bird-tag-highlight'));
+        tag.classList.add('bird-tag');
+    }else if(tag.classList.contains('car-tag-highlight')){
+        tag.classList.remove(('car-tag-highlight'));
+        tag.classList.add('car-tag');
+    }else if(tag.classList.contains('cat-tag-highlight')){
+        tag.classList.remove(('cat-tag-highlight'));
+        tag.classList.add('cat-tag');
+    }else if(tag.classList.contains('person-tag-highlight')){
+        tag.classList.remove(('person-tag-highlight'));
+        tag.classList.add('person-tag');
+    }else if(tag.classList.contains('sun-tag-highlight')){
+        tag.classList.remove(('sun-tag-highlight'));
+        tag.classList.add('sun-tag');
+    }
+};
+
+var appendTag = function(dropzone, tag){
+    jQuery(dropzone).append(jQuery(tag));
+};
+
+var removePositionOfTag = function(tag){
+    jQuery(tag).removeAttr('style');
+    jQuery(tag).removeAttr('data-x');
+    jQuery(tag).removeAttr('data-y');
+};
+var removeTagDropClasses = function(tag){
+    tag.classList.remove('tag-drop-one');
+    tag.classList.remove('tag-drop-two');
+    tag.classList.remove('tag-drop-three');
+    tag.classList.remove('tag-drop-four');
+};
+
 // target elements with the "draggable" class
 interact('.draggable')
     .draggable({
@@ -6,7 +69,7 @@ interact('.draggable')
 
         onstart: function(event){
             var target = event.target;
-
+            target.classList.remove('float-shadow');
             addHighlightToTag(target);
         },
         // call this function on every dragmove event
@@ -97,7 +160,7 @@ interact('.dropzone').dropzone({
             appendTag(dropzoneElement, draggableElement);
             removePositionOfTag(draggableElement);
             draggableElement.classList.add('tag-drop-three');
-        }else{
+        }else if(numberOfTags ===3){
             appendTag(dropzoneElement, draggableElement);
             removePositionOfTag(draggableElement);
             draggableElement.classList.add('tag-drop-four');
@@ -109,66 +172,3 @@ interact('.dropzone').dropzone({
         event.target.classList.remove('drop-target');
     }
 });
-
-var addHighlightToTag = function(tag){
-
-    if(tag.classList.contains('apple-tag')){
-        tag.classList.remove(('apple-tag'));
-        tag.classList.add('apple-tag-highlight');
-    }else if(tag.classList.contains('bird-tag')){
-        tag.classList.remove(('bird-tag'));
-        tag.classList.add('bird-tag-highlight');
-    }else if(tag.classList.contains('car-tag')){
-        tag.classList.remove(('car-tag'));
-        tag.classList.add('car-tag-highlight');
-    }else if(tag.classList.contains('cat-tag')){
-        tag.classList.remove(('cat-tag'));
-        tag.classList.add('cat-tag-highlight');
-    }else if(tag.classList.contains('person-tag')){
-        tag.classList.remove(('person-tag'));
-        tag.classList.add('person-tag-highlight');
-    }else if(tag.classList.contains('sun-tag')){
-        tag.classList.remove(('sun-tag'));
-        tag.classList.add('sun-tag-highlight');
-    }
-};
-
-var removeHighlightFromTag = function(tag){
-
-
-    if(tag.classList.contains('apple-tag-highlight')){
-        tag.classList.remove(('apple-tag-highlight'));
-        tag.classList.add('apple-tag');
-    }else if(tag.classList.contains('bird-tag-highlight')){
-        tag.classList.remove(('bird-tag-highlight'));
-        tag.classList.add('bird-tag');
-    }else if(tag.classList.contains('car-tag-highlight')){
-        tag.classList.remove(('car-tag-highlight'));
-        tag.classList.add('car-tag');
-    }else if(tag.classList.contains('cat-tag-highlight')){
-        tag.classList.remove(('cat-tag-highlight'));
-        tag.classList.add('cat-tag');
-    }else if(tag.classList.contains('person-tag-highlight')){
-        tag.classList.remove(('person-tag-highlight'));
-        tag.classList.add('person-tag');
-    }else if(tag.classList.contains('sun-tag-highlight')){
-        tag.classList.remove(('sun-tag-highlight'));
-        tag.classList.add('sun-tag');
-    }
-};
-
-var appendTag = function(dropzone, tag){
-    jQuery(dropzone).append(jQuery(tag));
-};
-
-var removePositionOfTag = function(tag){
-    jQuery(tag).removeAttr('style');
-    jQuery(tag).removeAttr('data-x');
-    jQuery(tag).removeAttr('data-y');
-};
-var removeTagDropClasses = function(tag){
-    tag.classList.remove('tag-drop-one');
-    tag.classList.remove('tag-drop-two');
-    tag.classList.remove('tag-drop-three');
-    tag.classList.remove('tag-drop-four');
-};
