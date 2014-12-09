@@ -193,6 +193,10 @@ html, body {
     margin:0;
     padding:0.2em;
     font-size: 12px;
+}
+
+h1 {
+    margin-top: 16px;
     color: white;
     font-style: bold;
 }
