@@ -23,7 +23,6 @@ var addHighlightToTag = function(tag){
 
 var removeHighlightFromTag = function(tag){
 
-
     if(tag.classList.contains('apple-tag-highlight')){
         tag.classList.remove(('apple-tag-highlight'));
         tag.classList.add('apple-tag');
@@ -116,7 +115,7 @@ interact.maxInteractions(Infinity);
 // enable draggables to be dropped into this
 interact('.dropzone').dropzone({
     // only accept elements matching this CSS selector
-    accept: jQuery( ".draggable" ),
+    accept: jQuery( '.draggable' ),
     // Require a 75% element overlap for a drop to be possible
     overlap: 0.75,
 
@@ -147,23 +146,32 @@ interact('.dropzone').dropzone({
 
         //draggableElement.textContent = 'Dropped';
 
-        var numberOfTags = jQuery(event.target).find(".drag-drop").length;
-        if(numberOfTags ===0){
-            appendTag(dropzoneElement, draggableElement);
-            removePositionOfTag(draggableElement);
-            draggableElement.classList.add('tag-drop-one');
-        }else if(numberOfTags === 1){
-            appendTag(dropzoneElement, draggableElement);
-            removePositionOfTag(draggableElement);
-            draggableElement.classList.add('tag-drop-two');
-        }else if(numberOfTags ===2){
-            appendTag(dropzoneElement, draggableElement);
-            removePositionOfTag(draggableElement);
-            draggableElement.classList.add('tag-drop-three');
-        }else if(numberOfTags ===3){
-            appendTag(dropzoneElement, draggableElement);
-            removePositionOfTag(draggableElement);
-            draggableElement.classList.add('tag-drop-four');
+        if(jQuery(event.target).attr('id') === 'footer_container'){
+            if(jQuery(draggableElement).find('float-shadow').length === 0){
+                removePositionOfTag(draggableElement);
+                draggableElement.classList.add('float-shadow');
+            }
+        }
+        else
+        {
+            var numberOfTags = jQuery(dropzoneElement).find('.drag-drop').length;
+            if(numberOfTags === 0){
+                appendTag(dropzoneElement, draggableElement);
+                removePositionOfTag(draggableElement);
+                draggableElement.classList.add('tag-drop-one');
+            }else if(numberOfTags === 1){
+                appendTag(dropzoneElement, draggableElement);
+                removePositionOfTag(draggableElement);
+                draggableElement.classList.add('tag-drop-two');
+            }else if(numberOfTags === 2){
+                appendTag(dropzoneElement, draggableElement);
+                removePositionOfTag(draggableElement);
+                draggableElement.classList.add('tag-drop-three');
+            }else if(numberOfTags === 3){
+                appendTag(dropzoneElement, draggableElement);
+                removePositionOfTag(draggableElement);
+                draggableElement.classList.add('tag-drop-four');
+            }
         }
     },
     ondropdeactivate: function (event) {
