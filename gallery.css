@@ -20,7 +20,6 @@
     border-color: #666;
 }
 
-<<<<<<< HEAD
 .apple {
     background: url('GameParts/TAG_Apple.png')
 }
@@ -52,29 +51,6 @@
     background: url('GameParts/TAG_Person_Highlight.png')
 }
 .sun {
-=======
-.apple-tag {
-    background: url('GameParts/TAG_Apple.png')
-}
-
-.bird-tag {
-    background: url('GameParts/TAG_Bird.png')
-}
-
-.car-tag {
-    background: url('GameParts/TAG_Car.png')
-}
-
-.cat-tag {
-    background: url('GameParts/TAG_Cat.png')
-}
-
-.person-tag {
-    background: url('GameParts/TAG_Person.png')
-}
-
-.sun-tag {
->>>>>>> FETCH_HEAD
     background: url('GameParts/TAG_Sun.png')
 }
 .sun-highlight {
@@ -140,93 +116,15 @@ body {
 }
 
 .mirrors {
-    background-image:url(WikimediaPics/01mirrors.png);
-}
-
-.airplane {
-    background-image:url(WikimediaPics/02airplane.png);
-}
-
-.people {
-    background-image:url(WikimediaPics/03people.png);
-}
-
-.minicooper {
-    background-image:url(WikimediaPics/04minicooper.png);
-}
-
-.cat {
-    background-image:url(WikimediaPics/05cat.png);
-}
-
-.graffiti {
-    background-image:url(WikimediaPics/06graffiti.png);
-}
-
-.christmas {
-    background-image:url(WikimediaPics/07christmas.png);
-}
-
-.cactus {
-    background-image:url(WikimediaPics/08cactus.png);
-}
-
-.bird {
-    background-image:url(WikimediaPics/09bird.png);
-}
-
-.apple {
-    background-image:url(WikimediaPics/10apple.png);
-}
-
-.sugarfactory {
-    background-image:url(WikimediaPics/11sugarfactory.png);
-}
-
-.sun {
-    background-image:url(WikimediaPics/12sun.png);
-}
-
-.lightning {
-    background-image:url(WikimediaPics/13lightning.png);
-}
-
-.northsea {
-    background-image:url(WikimediaPics/14northsea.png);
-}
-
-.oceanpark {
-    background-image:url(WikimediaPics/15oceanpark.png);
-}
-
-.penguins {
-    background-image:url(WikimediaPics/16penguins.png);
-}
-
-.racecar {
-    background-image:url(WikimediaPics/17racecar.png);
-}
-
-.beach {
-    background-image:url(WikimediaPics/18beach.png);
-}
-
-.ceiling {
-    background-image:url(WikimediaPics/19ceiling.png);
-}
-
-.farm {
-    background-image:url(WikimediaPics/20farm.png);
-}
-.pic {
     width:100%;
     height:100%;
     position:relative;
+    background-image:url(WikimediaPics/02airplane.png);
     background-size:cover;
     background-position:50%;
 }
 
-.dropzone.drop-target .pic:before{
+.dropzone.drop-target .mirrors:before{
     content:'';
     position: absolute;
     left: 2%;
@@ -236,11 +134,7 @@ body {
     border: 1px solid white;
 }
 .drop-target {
-<<<<<<< HEAD
     box-shadow: 0 0 0 15px #4ba5ff inset;
-=======
-    /*box-shadow: 0 0 0 15px blue inset;*/
->>>>>>> FETCH_HEAD
 }
 
 .boxInner .titleBox {
