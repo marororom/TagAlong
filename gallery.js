@@ -112,48 +112,48 @@ interact('.dropzone').dropzone({
 
 var addHighlightToTag = function(tag){
 
-    if(tag.classList.contains('apple')){
-        tag.classList.remove(('apple'));
-        tag.classList.add('apple-highlight');
-    }else if(tag.classList.contains('bird')){
-        tag.classList.remove(('bird'));
-        tag.classList.add('bird-highlight');
-    }else if(tag.classList.contains('car')){
-        tag.classList.remove(('car'));
-        tag.classList.add('car-highlight');
-    }else if(tag.classList.contains('cat')){
-        tag.classList.remove(('cat'));
-        tag.classList.add('cat-highlight');
-    }else if(tag.classList.contains('person')){
-        tag.classList.remove(('person'));
-        tag.classList.add('person-highlight');
-    }else if(tag.classList.contains('sun')){
-        tag.classList.remove(('sun'));
-        tag.classList.add('sun-highlight');
+    if(tag.classList.contains('apple-tag')){
+        tag.classList.remove(('apple-tag'));
+        tag.classList.add('apple-tag-highlight');
+    }else if(tag.classList.contains('bird-tag')){
+        tag.classList.remove(('bird-tag'));
+        tag.classList.add('bird-tag-highlight');
+    }else if(tag.classList.contains('car-tag')){
+        tag.classList.remove(('car-tag'));
+        tag.classList.add('car-tag-highlight');
+    }else if(tag.classList.contains('cat-tag')){
+        tag.classList.remove(('cat-tag'));
+        tag.classList.add('cat-tag-highlight');
+    }else if(tag.classList.contains('person-tag')){
+        tag.classList.remove(('person-tag'));
+        tag.classList.add('person-tag-highlight');
+    }else if(tag.classList.contains('sun-tag')){
+        tag.classList.remove(('sun-tag'));
+        tag.classList.add('sun-tag-highlight');
     }
 };
 
 var removeHighlightFromTag = function(tag){
 
 
-    if(tag.classList.contains('apple-highlight')){
-        tag.classList.remove(('apple-highlight'));
-        tag.classList.add('apple');
-    }else if(tag.classList.contains('bird-highlight')){
-        tag.classList.remove(('bird-highlight'));
-        tag.classList.add('bird');
-    }else if(tag.classList.contains('car-highlight')){
-        tag.classList.remove(('car-highlight'));
-        tag.classList.add('car');
-    }else if(tag.classList.contains('cat-highlight')){
-        tag.classList.remove(('cat-highlight'));
-        tag.classList.add('cat');
-    }else if(tag.classList.contains('person-highlight')){
-        tag.classList.remove(('person-highlight'));
-        tag.classList.add('person');
-    }else if(tag.classList.contains('sun-highlight')){
-        tag.classList.remove(('sun-highlight'));
-        tag.classList.add('sun');
+    if(tag.classList.contains('apple-tag-highlight')){
+        tag.classList.remove(('apple-tag-highlight'));
+        tag.classList.add('apple-tag');
+    }else if(tag.classList.contains('bird-tag-highlight')){
+        tag.classList.remove(('bird-tag-highlight'));
+        tag.classList.add('bird-tag');
+    }else if(tag.classList.contains('car-tag-highlight')){
+        tag.classList.remove(('car-tag-highlight'));
+        tag.classList.add('car-tag');
+    }else if(tag.classList.contains('cat-tag-highlight')){
+        tag.classList.remove(('cat-tag-highlight'));
+        tag.classList.add('cat-tag');
+    }else if(tag.classList.contains('person-tag-highlight')){
+        tag.classList.remove(('person-tag-highlight'));
+        tag.classList.add('person-tag');
+    }else if(tag.classList.contains('sun-tag-highlight')){
+        tag.classList.remove(('sun-tag-highlight'));
+        tag.classList.add('sun-tag');
     }
 };
 
