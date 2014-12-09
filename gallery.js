@@ -68,7 +68,7 @@ interact('.draggable')
 
         onstart: function(event){
             var target = event.target;
-            target.classList.remove('float-shadow');
+            target.classList.remove('wobble-vertical');
             addHighlightToTag(target);
         },
         // call this function on every dragmove event
@@ -147,9 +147,9 @@ interact('.dropzone').dropzone({
         //draggableElement.textContent = 'Dropped';
 
         if(jQuery(event.target).attr('id') === 'footer_container'){
-            if(jQuery(draggableElement).find('float-shadow').length === 0){
+            if(jQuery(draggableElement).find('wobble-vertical').length === 0){
                 removePositionOfTag(draggableElement);
-                draggableElement.classList.add('float-shadow');
+                draggableElement.classList.add('wobble-vertical');
             }
         }
         else
