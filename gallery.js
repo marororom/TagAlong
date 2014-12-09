@@ -145,7 +145,6 @@ interact('.dropzone').dropzone({
             dropzoneElement = event.target;
 
         //draggableElement.textContent = 'Dropped';
-
         if(jQuery(event.target).attr('id') === 'footer_container'){
             if(jQuery(draggableElement).find('hover').length === 0){
                 removePositionOfTag(draggableElement);
@@ -172,6 +171,16 @@ interact('.dropzone').dropzone({
                 removePositionOfTag(draggableElement);
                 draggableElement.classList.add('tag-drop-four');
             }
+        }
+        /*Bugfix*/
+        var footerTags = jQuery('#footer_container').find('.hover');
+        for(i = 0; i < footerTags.length; i++){
+            var tag = footerTags[i];
+            jQuery(tag).removeClass('hover');
+            jQuery(tag).removeAttr('style');
+            jQuery(tag).removeAttr('data-x');
+            jQuery(tag).removeAttr('data-y');
+            jQuery(tag).addClass('hover');
         }
     },
     ondropdeactivate: function (event) {
