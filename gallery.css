@@ -20,32 +20,42 @@
     border-color: #666;
 }
 
-
-
 .apple {
     background: url('GameParts/TAG_Apple.png')
 }
-
+.apple-highlight {
+    background: url('GameParts/TAG_Apple_Highlight.png')
+}
 .bird {
     background: url('GameParts/TAG_Bird.png')
 }
-
+.bird-highlight {
+     background: url('GameParts/TAG_Bird_Highlight.png')
+ }
 .car {
     background: url('GameParts/TAG_Car.png')
 }
-
+.car-highlight {
+    background: url('GameParts/TAG_Car_Highlight.png')
+}
 .cat {
     background: url('GameParts/TAG_Cat.png')
 }
-
+.cat-highlight {
+    background: url('GameParts/TAG_Cat_Highlight.png')
+}
 .person {
     background: url('GameParts/TAG_Person.png')
 }
-
+.person-highlight {
+    background: url('GameParts/TAG_Person_Highlight.png')
+}
 .sun {
     background: url('GameParts/TAG_Sun.png')
 }
-
+.sun-highlight {
+    background: url('GameParts/TAG_Sun_Highlight.png')
+}
 .drag-drop {
     background-repeat: no-repeat;
     background-size: 80px Auto;
@@ -57,8 +67,6 @@
 
     transition: background-color 0.3s;
 }
-
-.drag-drop.can-drop { border: 1px solid white; }
 
 .tag-drop-one {
     position: absolute;
@@ -126,7 +134,7 @@ body {
     border: 1px solid white;
 }
 .drop-target {
-    box-shadow: 0 0 0 15px blue inset;
+    box-shadow: 0 0 0 15px #4ba5ff inset;
 }
 
 .boxInner .titleBox {

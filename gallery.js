@@ -4,6 +4,11 @@ interact('.draggable')
         // allow dragging of multple elements at the same time
         max: Infinity,
 
+        onstart: function(event){
+            var target = event.target;
+
+            addHighlightToTag(target);
+        },
         // call this function on every dragmove event
         onmove: function (event) {
             var target = event.target,
@@ -22,12 +27,15 @@ interact('.draggable')
         },
         // call this function on every dragend event
         onend: function (event) {
-            var textEl = event.target.querySelector('p');
+            var target = event.target;
+            var textEl = target.querySelector('p');
 
             textEl && (textEl.textContent =
                 'moved a distance of '
                 + (Math.sqrt(event.dx * event.dx +
                 event.dy * event.dy)|0) + 'px');
+
+            removeHighlightFromTag(target);
         }
     })
     // enable inertial throwing
@@ -62,17 +70,13 @@ interact('.dropzone').dropzone({
         // feedback the possibility of a drop
         removeTagDropClasses(draggableElement);
         dropzoneElement.classList.add('drop-target');
-        draggableElement.classList.add('can-drop');
-        //draggableElement.textContent = 'Dragged in';
     },
     ondragleave: function (event) {
         var draggableElement = event.relatedTarget,
             dropzoneElement = event.target;
         // remove the drop feedback style
         dropzoneElement.classList.remove('drop-target');
-        draggableElement.classList.remove('can-drop');
 
-        //draggableElement.textContent = 'Dragged out';
     },
     ondrop: function (event) {
         var draggableElement = event.relatedTarget,
@@ -105,6 +109,53 @@ interact('.dropzone').dropzone({
         event.target.classList.remove('drop-target');
     }
 });
+
+var addHighlightToTag = function(tag){
+
+    if(tag.classList.contains('apple')){
+        tag.classList.remove(('apple'));
+        tag.classList.add('apple-highlight');
+    }else if(tag.classList.contains('bird')){
+        tag.classList.remove(('bird'));
+        tag.classList.add('bird-highlight');
+    }else if(tag.classList.contains('car')){
+        tag.classList.remove(('car'));
+        tag.classList.add('car-highlight');
+    }else if(tag.classList.contains('cat')){
+        tag.classList.remove(('cat'));
+        tag.classList.add('cat-highlight');
+    }else if(tag.classList.contains('person')){
+        tag.classList.remove(('person'));
+        tag.classList.add('person-highlight');
+    }else if(tag.classList.contains('sun')){
+        tag.classList.remove(('sun'));
+        tag.classList.add('sun-highlight');
+    }
+};
+
+var removeHighlightFromTag = function(tag){
+
+
+    if(tag.classList.contains('apple-highlight')){
+        tag.classList.remove(('apple-highlight'));
+        tag.classList.add('apple');
+    }else if(tag.classList.contains('bird-highlight')){
+        tag.classList.remove(('bird-highlight'));
+        tag.classList.add('bird');
+    }else if(tag.classList.contains('car-highlight')){
+        tag.classList.remove(('car-highlight'));
+        tag.classList.add('car');
+    }else if(tag.classList.contains('cat-highlight')){
+        tag.classList.remove(('cat-highlight'));
+        tag.classList.add('cat');
+    }else if(tag.classList.contains('person-highlight')){
+        tag.classList.remove(('person-highlight'));
+        tag.classList.add('person');
+    }else if(tag.classList.contains('sun-highlight')){
+        tag.classList.remove(('sun-highlight'));
+        tag.classList.add('sun');
+    }
+};
 
 var appendTag = function(dropzone, tag){
     jQuery(dropzone).append(jQuery(tag));
