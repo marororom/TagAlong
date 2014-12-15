@@ -60,6 +60,10 @@ var removeTagDropClasses = function(tag){
     tag.classList.remove('tag-drop-four');
 };
 
+var goToGameEndScreen = function(){
+    location.href = 'http://plcpmb.axshare.com/tagalongend.html';
+};
+
 // target elements with the "draggable" class
 interact('.draggable')
     .draggable({
@@ -181,6 +185,11 @@ interact('.dropzone').dropzone({
             jQuery(tag).removeAttr('data-x');
             jQuery(tag).removeAttr('data-y');
             jQuery(tag).addClass('hover');
+        }
+
+        var footerTags = jQuery('#footer_container').find('.drag-drop');
+        if(footerTags.length === 0){
+            setTimeout(goToGameEndScreen(), 2000);
         }
     },
     ondropdeactivate: function (event) {
