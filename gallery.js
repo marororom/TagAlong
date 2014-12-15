@@ -174,6 +174,14 @@ interact('.dropzone').dropzone({
                 appendTag(dropzoneElement, draggableElement);
                 removePositionOfTag(draggableElement);
                 draggableElement.classList.add('tag-drop-four');
+            }else if(numberOfTags === 4){
+                appendTag(dropzoneElement, draggableElement);
+                removePositionOfTag(draggableElement);
+                draggableElement.classList.add('tag-drop-one');
+            }else if(numberOfTags === 5){
+                appendTag(dropzoneElement, draggableElement);
+                removePositionOfTag(draggableElement);
+                draggableElement.classList.add('tag-drop-two');
             }
         }
         /*Bugfix*/
