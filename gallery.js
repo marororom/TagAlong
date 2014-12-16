@@ -61,7 +61,7 @@ var removeTagDropClasses = function(tag){
 };
 
 var goToGameEndScreen = function(){
-    location.href = 'http://plcpmb.axshare.com/tagalongend.html';
+    location.href = 'http://tgnzne.axshare.com//tagalongend.html';
 };
 
 // target elements with the "draggable" class
